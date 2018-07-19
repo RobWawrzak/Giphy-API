@@ -1,0 +1,32 @@
+body {
+  background-image: url(/assets/images/background1.jpg);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  color: black;
+}
+* {
+  box-sizing: border-box;
+}
+
+/* -------------- */
+
+.jumbotron {
+  background-color: inherit;
+  text-align: center;
+}
+.gifDiv {
+  /* making the images go in one line rather than block & adding spacing between the images*/
+  float: left;
+  margin: 3px;
+}
+.container {
+  background-color: #fff;
+  opacity: 0.8;
+  padding: 20px;
+}
+.btn {
+  /* adding spacing between each button*/
+  margin: 3px;
+  background-color: #999999;
+  border-color: #fff;
+}
