@@ -3,19 +3,19 @@ $(document).ready(function() {
 
   // An array of actions, new actions will be pushed into this array;
   var actions = [
-    'Dancing',
-    'Jogging',
-    'Falling',
+    'Dance',
+    'Fall',
+    'Jog',
     'Reading',
     'Pushing',
-    'Swimming',
-    'Eating',
+    'Swim',
+    'Eat',
     'Skipping',
-    'Crying',
-    'Winking',
-    'Beyoncing',
+    'Cry',
+    'Wink',
+    'Running',
     'Strolling',
-    'Hopping'
+    'Singing'
   ];
   // Creating Functions & Methods
   // Function that displays all gif buttons
