@@ -47,23 +47,33 @@ $(document).ready(function() {
     });
   }
 
-  var queryURL =
-    'https://api.giphy.com/v1/gifs/translate?api_key=CK7TeDVG1uZu3mjxTo2b8PIbqzkQY4wI&s=Apple';
+  //Function that displays all of the gifs
 
-  $.ajax({
-    contentType: 'application/json; charset=utf-8',
-    url: queryURL,
-    method: 'GET',
-    async: true,
-    dataType: 'json',
-    success: function(data) {
-      console.log(data);
-    },
-    error: function(data1) {
-      console.log(data1);
-    }
-  });
+  function displayGifs() {
+    var action = $(this).attr('data-name');
 
+    var queryURL =
+      'https://api.giphy.com/v1/gifs/search?q=' +
+      action +
+      '&api_key=CK7TeDVG1uZu3mjxTo2b8PIbqzkQY4wI&limit=10';
+    console.log(queryURL);
+
+    $.ajax({
+      contentType: 'application/json; charset=utf-8',
+      url: queryURL,
+      method: 'GET',
+      async: true,
+      dataType: 'json',
+      success: function(data) {
+        console.log(data);
+      },
+      error: function(data1) {
+        console.log(data1);
+      }
+    });
+  }
+  // $('.action').click(displayGifs);
+  $(document).on('click', '.action', displayGifs);
   displayGifButtons();
   addNewButton();
 });
