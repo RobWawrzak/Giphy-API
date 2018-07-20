@@ -1,28 +1,44 @@
 body {
-  background-image: url(/assets/images/background1.jpg);
-  background-size: 100%;
+  background-image: url('http://1.bp.blogspot.com/-DKZDpRKxg5o/TmTDPVr0y4I/AAAAAAAAAhY/duQsdLBDFyE/s1600/Website-Wallpapers-.jpg');
+  background-size: cover;
+  width: 100%;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   color: black;
 }
 * {
   box-sizing: border-box;
 }
-
-/* -------------- */
+img {
+  height: 150px;
+  width: 150px;
+}
+section {
+  width: 90%;
+  margin-left: 50px;
+  margin-right: 50px;
+}
 
 .jumbotron {
   background-color: inherit;
   text-align: center;
+  background-color: #fff;
+  opacity: 0.8;
+  padding: 20px;
+  margin: 50px;
 }
 .gifDiv {
   /* making the images go in one line rather than block & adding spacing between the images*/
   float: left;
   margin: 3px;
 }
-.container {
+.container-fluid {
   background-color: #fff;
   opacity: 0.8;
   padding: 20px;
+  margin-left: 50px;
+  margin-right: 50px;
+  width: auto;
 }
 .btn {
   /* adding spacing between each button*/

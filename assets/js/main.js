@@ -3,7 +3,7 @@ $(document).ready(function() {
   var actions = [
     'Dance',
     'Fall',
-    'Jog',
+    'Falling',
     'Reading',
     'Pushing',
     'Swim',
@@ -86,8 +86,18 @@ $(document).ready(function() {
       }
     });
   }
-  // $('.action').click(displayGifs);
-  $(document).on('click', '.action', displayGifs);
+
   displayGifButtons();
   addNewButton();
+  $(document).on('click', '.action', displayGifs);
+  $(document).on('click', '.image', function() {
+    var state = $(this).attr('data-state');
+    if (state == 'still') {
+      $(this).attr('src', $(this).data('animate'));
+      $(this).attr('data-state', 'animate');
+    } else {
+      $(this).attr('src', $(this).data('still'));
+      $(this).attr('data-state', 'still');
+    }
+  });
 });
