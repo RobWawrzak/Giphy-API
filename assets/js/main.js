@@ -1,6 +1,4 @@
 $(document).ready(function() {
-  // alert('worked');
-
   // An array of actions, new actions will be pushed into this array;
   var actions = [
     'Dance',
@@ -61,14 +59,30 @@ $(document).ready(function() {
     $.ajax({
       contentType: 'application/json; charset=utf-8',
       url: queryURL,
-      method: 'GET',
-      async: true,
-      dataType: 'json',
-      success: function(data) {
-        console.log(data);
-      },
-      error: function(data1) {
-        console.log(data1);
+      method: 'GET'
+    }).done(function(response) {
+      console.log(response);
+      var results = response.data; //shows results of gifs
+      console.log(results);
+      if (results == '') {
+        alert("There isn't anything to show for this option");
+      }
+      for (var i = 0; i < results.length; i++) {
+        var gifDiv = $('<div>');
+        gifDiv.addClass('gifDiv');
+        var gifRating = $('<p>').text('Rating:' + results[i].rating);
+        gifDiv.append(gifRating);
+        var gifImage = $('<img>');
+        gifImage.attr('src', results[i].images.fixed_height_small_still.url); //src of still image
+        gifImage.attr(
+          'data-still',
+          results[i].images.fixed_height_small_still.url
+        );
+        gifImage.attr('data-animate', results[i].images.fixed_height_small.url);
+        gifImage.attr('data-state', 'still'); //set the image state
+        gifImage.addClass('image');
+        gifDiv.append(gifImage); //pulling still image of gifImage
+        $('#gifsView').prepend(gifDiv);
       }
     });
   }
